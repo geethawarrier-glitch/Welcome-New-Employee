@@ -1,0 +1,6 @@
+{
+  "name": "New-Joiner Welcome Guide",
+  "description": "A calm, friendly onboarding welcome guide for new team members featuring a first-week checklist with progress tracking, key contacts, essential links, and interactive FAQ.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

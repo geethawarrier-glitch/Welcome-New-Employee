@@ -1,0 +1,1544 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New-Joiner Welcome Guide</title>
+    <meta name="description" content="A calm, friendly onboarding welcome guide for new team members featuring a first-week checklist with progress tracking, key contacts, essential links, and interactive FAQ." />
+    <meta property="og:title" content="New-Joiner Welcome Guide" />
+    <meta property="og:description" content="A calm, friendly onboarding welcome guide for new team members featuring a first-week checklist with progress tracking, key contacts, essential links, and interactive FAQ." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <style>
+      :root {
+        --color-bg: #e2ecf7;
+        --color-surface: #ffffff;
+        --color-surface-hover: #f8fafc;
+        --color-border: #cadbef;
+        --color-border-subtle: #ebf2fa;
+        --color-primary: #174b82;
+        --color-primary-hover: #0e3561;
+        --color-primary-light: #e5effa;
+        --color-primary-soft: #f0f6fc;
+        --color-text-main: #0c2137;
+        --color-text-muted: #4b6480;
+        --color-text-light: #7690ac;
+        --color-success: #0d8a5b;
+        --color-success-bg: #eafaf1;
+        --color-success-border: #b8ebd1;
+        --radius-lg: 20px;
+        --radius-md: 14px;
+        --radius-sm: 10px;
+        --radius-full: 9999px;
+        --shadow-sm: 0 2px 8px rgba(12, 33, 55, 0.05);
+        --shadow-md: 0 8px 24px -2px rgba(12, 33, 55, 0.07), 0 2px 6px -1px rgba(12, 33, 55, 0.03);
+        --shadow-hover: 0 12px 28px -2px rgba(17, 54, 96, 0.12), 0 4px 10px -2px rgba(12, 33, 55, 0.05);
+        --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background-color: var(--color-bg);
+        background-image: 
+          radial-gradient(circle at 50% -100px, rgba(14, 53, 97, 0.12) 0%, transparent 600px),
+          radial-gradient(#1e4d7e 0.75px, transparent 0.75px),
+          linear-gradient(180deg, #d8e6f5 0%, #e6eff9 450px, #dce8f5 100%);
+        background-size: 100% 700px, 24px 24px, 100% 100%;
+        background-position: top center, 0 0, 0 0;
+        background-attachment: scroll, fixed, fixed;
+        color: var(--color-text-main);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        padding: 28px 16px 84px;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 880px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+      }
+
+      /* Typography */
+      h1, h2, h3 {
+        color: var(--color-text-main);
+        font-weight: 700;
+        line-height: 1.25;
+        text-wrap: balance;
+      }
+
+      .section-header {
+        margin-bottom: 20px;
+      }
+
+      .section-title {
+        font-size: 1.35rem;
+        letter-spacing: -0.01em;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .section-subtitle {
+        color: var(--color-text-muted);
+        font-size: 0.925rem;
+        margin-top: 4px;
+      }
+
+      /* Section 1: Welcome Banner with Corporate Color & Inspiring Floating Icons */
+      .welcome-banner {
+        background: linear-gradient(135deg, #09223c 0%, #113661 52%, #194e8a 100%);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: var(--radius-lg);
+        padding: 44px 36px;
+        box-shadow: 0 16px 36px -4px rgba(9, 34, 60, 0.28), 0 4px 12px -2px rgba(9, 34, 60, 0.14);
+        position: relative;
+        overflow: hidden;
+        color: #ffffff;
+      }
+
+      /* Ambient glowing mesh inside the banner */
+      .welcome-banner::before {
+        content: "";
+        position: absolute;
+        top: -60px;
+        right: -60px;
+        width: 320px;
+        height: 320px;
+        background: radial-gradient(circle, rgba(56, 189, 248, 0.22) 0%, rgba(25, 78, 138, 0) 70%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .welcome-banner::after {
+        content: "";
+        position: absolute;
+        bottom: -70px;
+        left: 25%;
+        width: 280px;
+        height: 280px;
+        background: radial-gradient(circle, rgba(96, 165, 250, 0.14) 0%, rgba(25, 78, 138, 0) 70%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* Inspiring Icons Background Layer */
+      .welcome-bg-icons {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .inspire-icon {
+        position: absolute;
+        color: #93c5fd;
+        opacity: 0.24;
+        transition: opacity 0.3s ease;
+        filter: drop-shadow(0 2px 8px rgba(56, 189, 248, 0.25));
+      }
+
+      .welcome-banner:hover .inspire-icon {
+        opacity: 0.36;
+      }
+
+      /* Inspiring Icon Positions & Keyframes */
+      .icon-rocket {
+        top: 24px;
+        right: 42px;
+        width: 60px;
+        height: 60px;
+        color: #60a5fa;
+        transform: rotate(18deg);
+        animation: floatRocket 6s ease-in-out infinite alternate;
+      }
+
+      .icon-lightbulb {
+        top: 26px;
+        left: 360px;
+        width: 44px;
+        height: 44px;
+        color: #facc15;
+        opacity: 0.26;
+        animation: pulseLight 5s ease-in-out infinite alternate;
+      }
+
+      .icon-trophy {
+        bottom: 24px;
+        right: 140px;
+        width: 50px;
+        height: 50px;
+        color: #fcd34d;
+        opacity: 0.25;
+        animation: floatSlow 7s ease-in-out infinite alternate;
+      }
+
+      .icon-compass {
+        bottom: 24px;
+        right: 32px;
+        width: 42px;
+        height: 42px;
+        color: #38bdf8;
+        animation: spinSlow 30s linear infinite;
+      }
+
+      .icon-target {
+        top: 98px;
+        right: 250px;
+        width: 42px;
+        height: 42px;
+        color: #818cf8;
+        opacity: 0.2;
+        animation: floatSlow 8s ease-in-out infinite alternate 1s;
+      }
+
+      .icon-team {
+        bottom: 28px;
+        left: 420px;
+        width: 44px;
+        height: 44px;
+        color: #34d399;
+        opacity: 0.22;
+        animation: pulseLight 6s ease-in-out infinite alternate 0.5s;
+      }
+
+      .icon-coffee {
+        top: 104px;
+        right: 145px;
+        width: 32px;
+        height: 32px;
+        color: #f472b6;
+        opacity: 0.2;
+        animation: floatSlow 6s ease-in-out infinite alternate 0.8s;
+      }
+
+      .icon-sparkle-1 {
+        top: 18px;
+        right: 175px;
+        width: 28px;
+        height: 28px;
+        color: #e0f2fe;
+        opacity: 0.38;
+        animation: twinkle 3s ease-in-out infinite alternate;
+      }
+
+      .icon-sparkle-2 {
+        bottom: 64px;
+        right: 64px;
+        width: 22px;
+        height: 22px;
+        color: #e0f2fe;
+        opacity: 0.32;
+        animation: twinkle 4s ease-in-out infinite alternate 1.5s;
+      }
+
+      @keyframes floatRocket {
+        0% { transform: translateY(0) rotate(18deg); }
+        100% { transform: translateY(-10px) translateX(4px) rotate(22deg); }
+      }
+
+      @keyframes floatSlow {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-8px); }
+      }
+
+      @keyframes pulseLight {
+        0% { opacity: 0.18; transform: scale(0.96); }
+        100% { opacity: 0.35; transform: scale(1.05); }
+      }
+
+      @keyframes twinkle {
+        0% { opacity: 0.15; transform: scale(0.85); }
+        100% { opacity: 0.5; transform: scale(1.15); }
+      }
+
+      @keyframes spinSlow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .icon-rocket, .icon-lightbulb, .icon-trophy, .icon-compass, .icon-target, .icon-team, .icon-coffee, .icon-sparkle-1, .icon-sparkle-2 {
+          animation: none !important;
+        }
+      }
+
+      .welcome-content {
+        position: relative;
+        z-index: 2;
+        max-width: 620px;
+      }
+
+      .welcome-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #e0f2fe;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        backdrop-filter: blur(8px);
+        padding: 6px 14px;
+        border-radius: var(--radius-full);
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      .welcome-title {
+        font-size: 2.25rem;
+        color: #ffffff;
+        letter-spacing: -0.025em;
+        margin-bottom: 12px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+      }
+
+      .welcome-intro {
+        font-size: 1.1rem;
+        color: #d3e7fb;
+        max-width: 600px;
+        line-height: 1.6;
+      }
+
+      /* Section 2: Checklist & Progress */
+      .checklist-card {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        padding: 32px;
+        box-shadow: var(--shadow-md);
+      }
+
+      .progress-card {
+        background: var(--color-primary-soft);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        padding: 20px;
+        margin-bottom: 24px;
+      }
+
+      .progress-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+      }
+
+      .progress-label {
+        font-weight: 600;
+        color: var(--color-text-main);
+      }
+
+      .progress-numbers {
+        font-weight: 700;
+        color: var(--color-primary);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .progress-track {
+        height: 10px;
+        background-color: #dbe7f3;
+        border-radius: var(--radius-full);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #1d5b96 0%, #3482cf 100%);
+        width: 0%;
+        border-radius: var(--radius-full);
+        transition: width 0.3s ease;
+      }
+
+      .completion-alert {
+        display: none;
+        margin-top: 14px;
+        padding: 12px 16px;
+        background-color: var(--color-success-bg);
+        border: 1px solid var(--color-success-border);
+        color: var(--color-success);
+        border-radius: var(--radius-sm);
+        font-size: 0.9rem;
+        font-weight: 600;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .completion-alert.active {
+        display: flex;
+      }
+
+      .checklist-items {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .checklist-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 16px;
+        background: #ffffff;
+        border: 1px solid var(--color-border-subtle);
+        border-radius: var(--radius-md);
+        transition: var(--transition);
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .checklist-item:hover {
+        background-color: var(--color-surface-hover);
+        border-color: var(--color-border);
+      }
+
+      .checklist-item.completed {
+        background-color: #f7fafc;
+        border-color: #e5edf5;
+      }
+
+      .checklist-item.completed .task-title {
+        color: var(--color-text-light);
+        text-decoration: line-through;
+      }
+
+      .checklist-item.completed .task-desc {
+        color: #9cb0c5;
+      }
+
+      .custom-checkbox {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        border: 2px solid #b3c9df;
+        border-radius: 7px;
+        margin-top: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        transition: var(--transition);
+      }
+
+      .checklist-item:hover .custom-checkbox {
+        border-color: var(--color-primary);
+      }
+
+      .checklist-item.completed .custom-checkbox {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+      }
+
+      .custom-checkbox svg {
+        opacity: 0;
+        transform: scale(0.6);
+        transition: var(--transition);
+        color: #ffffff;
+      }
+
+      .checklist-item.completed .custom-checkbox svg {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .task-content {
+        flex: 1;
+      }
+
+      .task-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--color-text-main);
+        transition: var(--transition);
+      }
+
+      .task-desc {
+        font-size: 0.875rem;
+        color: var(--color-text-muted);
+        margin-top: 3px;
+        line-height: 1.45;
+        transition: var(--transition);
+      }
+
+      .checklist-footer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .btn-reset {
+        background: none;
+        border: none;
+        color: var(--color-text-light);
+        font-size: 0.85rem;
+        cursor: pointer;
+        padding: 6px 10px;
+        border-radius: var(--radius-sm);
+        transition: var(--transition);
+      }
+
+      .btn-reset:hover {
+        color: var(--color-primary);
+        background-color: var(--color-primary-light);
+      }
+
+      /* Section 3: Who to ask */
+      .contacts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 18px;
+      }
+
+      .contact-card {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        padding: 22px;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .contact-card:hover {
+        box-shadow: var(--shadow-hover);
+        border-color: #c7dcf0;
+        transform: translateY(-2px);
+      }
+
+      .contact-top {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 14px;
+      }
+
+      .contact-avatar {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        border-radius: var(--radius-full);
+        background: linear-gradient(135deg, var(--color-primary-light) 0%, #d8e9fa 100%);
+        color: var(--color-primary);
+        font-weight: 700;
+        font-size: 1.05rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #c8dff5;
+      }
+
+      .contact-identity {
+        overflow: hidden;
+      }
+
+      .contact-name {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--color-text-main);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .contact-role {
+        font-size: 0.825rem;
+        font-weight: 600;
+        color: var(--color-primary);
+        line-height: 1.3;
+      }
+
+      .contact-body {
+        flex: 1;
+        font-size: 0.88rem;
+        color: var(--color-text-muted);
+        line-height: 1.5;
+        border-top: 1px solid var(--color-border-subtle);
+        padding-top: 12px;
+      }
+
+      .contact-label {
+        display: block;
+        font-size: 0.775rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 700;
+        color: var(--color-text-light);
+        margin-bottom: 4px;
+      }
+
+      /* Section 4: Useful Links */
+      .links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 16px;
+      }
+
+      .useful-link-btn {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 20px;
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        text-decoration: none;
+        color: var(--color-text-main);
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .useful-link-btn:hover {
+        background-color: var(--color-primary-soft);
+        border-color: #b5d5f5;
+        color: var(--color-primary);
+        box-shadow: var(--shadow-hover);
+        transform: translateY(-2px);
+      }
+
+      .useful-link-btn:active {
+        transform: translateY(0);
+      }
+
+      .link-icon-box {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        border-radius: var(--radius-sm);
+        background-color: var(--color-primary-light);
+        color: var(--color-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+      }
+
+      .useful-link-btn:hover .link-icon-box {
+        background-color: var(--color-primary);
+        color: #ffffff;
+      }
+
+      .link-text-group {
+        flex: 1;
+        overflow: hidden;
+      }
+
+      .link-name {
+        font-weight: 600;
+        font-size: 0.975rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .link-hint {
+        font-size: 0.8rem;
+        color: var(--color-text-light);
+      }
+
+      .link-arrow {
+        color: var(--color-text-light);
+        transition: var(--transition);
+      }
+
+      .useful-link-btn:hover .link-arrow {
+        color: var(--color-primary);
+        transform: translateX(3px);
+      }
+
+      /* Section 5: FAQ Accordion */
+      .faq-card {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+        box-shadow: var(--shadow-md);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .faq-item {
+        border: 1px solid var(--color-border-subtle);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        transition: var(--transition);
+      }
+
+      .faq-item.open {
+        border-color: #bcd9f5;
+        background-color: var(--color-primary-soft);
+      }
+
+      .faq-question-btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 18px 20px;
+        background: #ffffff;
+        border: none;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--color-text-main);
+        text-align: left;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .faq-question-btn:hover {
+        background-color: var(--color-surface-hover);
+        color: var(--color-primary);
+      }
+
+      .faq-item.open .faq-question-btn {
+        background-color: var(--color-primary-soft);
+        color: var(--color-primary-hover);
+      }
+
+      .faq-chevron {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        color: var(--color-text-light);
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .faq-item.open .faq-chevron {
+        transform: rotate(180deg);
+        color: var(--color-primary);
+      }
+
+      .faq-answer-panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+        padding: 0 20px;
+        color: var(--color-text-muted);
+        font-size: 0.925rem;
+        line-height: 1.6;
+        background-color: #ffffff;
+      }
+
+      .faq-item.open .faq-answer-panel {
+        padding: 0 20px 20px;
+      }
+
+      /* Notification Toast */
+      .toast {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: #112842;
+        color: #ffffff;
+        padding: 12px 20px;
+        border-radius: var(--radius-full);
+        font-size: 0.88rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transform: translateY(100px);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1000;
+      }
+
+      .toast.visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      /* Responsive rules */
+      @media (max-width: 640px) {
+        body {
+          padding: 16px 12px 60px;
+        }
+
+        .container {
+          gap: 28px;
+        }
+
+        .welcome-banner {
+          padding: 30px 20px;
+        }
+
+        .welcome-title {
+          font-size: 1.75rem;
+        }
+
+        .welcome-intro {
+          font-size: 0.98rem;
+        }
+
+        .icon-rocket {
+          right: 14px;
+          top: 14px;
+          width: 44px;
+          height: 44px;
+          opacity: 0.16;
+        }
+
+        .icon-lightbulb, .icon-team, .icon-target, .icon-coffee {
+          display: none;
+        }
+
+        .icon-trophy {
+          right: 64px;
+          bottom: 12px;
+          width: 38px;
+          height: 38px;
+          opacity: 0.18;
+        }
+
+        .icon-compass {
+          right: 14px;
+          bottom: 14px;
+          width: 32px;
+          height: 32px;
+          opacity: 0.2;
+        }
+
+        .checklist-card, .faq-card {
+          padding: 20px 16px;
+        }
+
+        .contacts-grid, .links-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .useful-link-btn {
+          min-height: 52px;
+        }
+
+        .faq-question-btn {
+          padding: 16px 14px;
+          font-size: 0.95rem;
+        }
+
+        .faq-item.open .faq-answer-panel {
+          padding: 0 14px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      
+      <!-- Section 1: Welcome Banner with Inspiring Floating Icons -->
+      <header class="welcome-banner">
+        <!-- Inspiring Background Floating Icons Layer -->
+        <div class="welcome-bg-icons" aria-hidden="true">
+          <!-- Rocket (Launch & Ambition) -->
+          <svg class="inspire-icon icon-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+          </svg>
+
+          <!-- Lightbulb (Innovation & Ideas) -->
+          <svg class="inspire-icon icon-lightbulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
+            <path d="M9 18h6"></path>
+            <path d="M10 22h4"></path>
+          </svg>
+
+          <!-- Trophy (Success & Achievement) -->
+          <svg class="inspire-icon icon-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+            <path d="M4 22h16"></path>
+            <path d="M10 14.66V17c0 .55-.45 1-1 1H8v4h8v-4h-1c-.55 0-1-.45-1-1v-2.34"></path>
+            <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
+          </svg>
+
+          <!-- Compass (Guidance & Direction) -->
+          <svg class="inspire-icon icon-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
+
+          <!-- Target (Focus & Milestones) -->
+          <svg class="inspire-icon icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="6"></circle>
+            <circle cx="12" cy="12" r="2"></circle>
+          </svg>
+
+          <!-- Team Network (Community & Belonging) -->
+          <svg class="inspire-icon icon-team" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+
+          <!-- Coffee Cup (Warm Welcome & Hospitality) -->
+          <svg class="inspire-icon icon-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
+          </svg>
+
+          <!-- Sparkles & Stars (Shine & Excellence) -->
+          <svg class="inspire-icon icon-sparkle-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"></path>
+          </svg>
+          <svg class="inspire-icon icon-sparkle-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"></path>
+          </svg>
+        </div>
+
+        <div class="welcome-content">
+          <div class="welcome-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+            New Team Member Portal
+          </div>
+          <h1 class="welcome-title">Welcome to the team!</h1>
+          <p class="welcome-intro">We are thrilled to have you here—here is everything you need to feel confident, connected, and supported during your first days and weeks.</p>
+        </div>
+      </header>
+
+      <!-- Section 2: First-Week Checklist -->
+      <section class="checklist-card" aria-labelledby="checklist-heading">
+        <div class="section-header">
+          <h2 id="checklist-heading" class="section-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d5b96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"></path>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            </svg>
+            First-Week Checklist
+          </h2>
+          <p class="section-subtitle">Complete these 8 essential milestones to get settled in smoothly. Your progress is saved automatically.</p>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-card">
+          <div class="progress-info">
+            <span class="progress-label">Onboarding Progress</span>
+            <span id="progress-text" class="progress-numbers">0 of 8 completed (0%)</span>
+          </div>
+          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0" id="progress-bar-container">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+          <div id="completion-alert" class="completion-alert">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+            <span>Wonderful work! You have finished all 8 first-week onboarding tasks. Welcome aboard!</span>
+          </div>
+        </div>
+
+        <!-- 8 Tasks -->
+        <div class="checklist-items" role="group" aria-label="First week checklist items">
+          
+          <div class="checklist-item" data-id="collect-laptop" tabindex="0" role="checkbox" aria-checked="false">
+            <div class="custom-checkbox" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="task-content">
+              <div class="task-title">Collect your laptop</div>
+              <div class="task-desc">Head to the IT Support desk on Level 3 to pick up your laptop, power adapter, peripherals, and security access keycard.</div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-id="setup-email" tabindex="0" role="checkbox" aria-checked="false">
+            <div class="custom-checkbox" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="task-content">
+              <div class="task-title">Set up email</div>
+              <div class="task-desc">Sign in with your temporary credentials, set a strong primary password, and enroll in multi-factor authentication (2FA).</div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-id="meet-buddy" tabindex="0" role="checkbox" aria-checked="false">
+            <div class="custom-checkbox" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="task-content">
+              <div class="task-title">Meet your buddy</div>
+              <div class="task-desc">Grab a coffee or tea with your assigned onboarding buddy to get oriented, ask informal questions, and tour the office floor.</div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-id="safety-training" tabindex="0" role="checkbox" aria-checked="false">
+            <div class="custom-checkbox" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="task-content">
+              <div class="task-title">Complete safety training</div>
+              <div class="task-desc">Finish the 20-minute digital workplace health, safety, and fire evacuation modules in the Learning Hub.</div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-id="join-chat" tabindex="0" role="checkbox" aria-checked="false">
+            <div class="custom-checkbox" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="task-content">
+              <div class="task-title">Join the team chat</div>
+              <div class="task-desc">Sign in to Slack, say hello in #welcome, and join your department channels (#engineering, #announcements, #social).</div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-id="book-one-on-one" tabindex="0" role="checkbox" aria-checked="false">
+            <div class="custom-checkbox" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="task-content">
+              <div class="task-title">Book a 1:1 with your manager</div>
+              <div class="task-desc">Check your manager's calendar link to set up your weekly recurring catch-up and review your 30-day goals.</div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-id="read-handbook" tabindex="0" role="checkbox" aria-checked="false">
+            <div class="custom-checkbox" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="task-content">
+              <div class="task-title">Read the team handbook</div>
+              <div class="task-desc">Browse through team rituals, code of conduct, remote collaboration norms, and annual leave guidelines.</div>
+            </div>
+          </div>
+
+          <div class="checklist-item" data-id="submit-bank-details" tabindex="0" role="checkbox" aria-checked="false">
+            <div class="custom-checkbox" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="task-content">
+              <div class="task-title">Submit your bank details to HR</div>
+              <div class="task-desc">Ensure prompt payroll processing on the 25th by uploading your bank account information in the HR Portal.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="checklist-footer">
+          <button id="reset-checklist-btn" class="btn-reset" type="button">Reset checklist</button>
+        </div>
+      </section>
+
+      <!-- Section 3: Who to ask -->
+      <section aria-labelledby="contacts-heading">
+        <div class="section-header">
+          <h2 id="contacts-heading" class="section-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d5b96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            Who to ask
+          </h2>
+          <p class="section-subtitle">Meet key team members ready to help you navigate your first weeks.</p>
+        </div>
+
+        <div class="contacts-grid">
+          
+          <!-- Card 1 -->
+          <article class="contact-card">
+            <div class="contact-top">
+              <div class="contact-avatar" aria-hidden="true">EV</div>
+              <div class="contact-identity">
+                <div class="contact-name">Elena Vance</div>
+                <div class="contact-role">IT Support Lead</div>
+              </div>
+            </div>
+            <div class="contact-body">
+              <span class="contact-label">Ask them about</span>
+              Hardware issues, software licenses, password resets, VPN configuration, and external monitor setups.
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="contact-card">
+            <div class="contact-top">
+              <div class="contact-avatar" aria-hidden="true">MC</div>
+              <div class="contact-identity">
+                <div class="contact-name">Marcus Chen</div>
+                <div class="contact-role">Onboarding Buddy</div>
+              </div>
+            </div>
+            <div class="contact-body">
+              <span class="contact-label">Ask them about</span>
+              Office traditions, unwritten team norms, great lunch spots nearby, coffee recommendations, and day-to-day workflow tips.
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="contact-card">
+            <div class="contact-top">
+              <div class="contact-avatar" aria-hidden="true">SJ</div>
+              <div class="contact-identity">
+                <div class="contact-name">Sarah Jenkins</div>
+                <div class="contact-role">People Partner (HR)</div>
+              </div>
+            </div>
+            <div class="contact-body">
+              <span class="contact-label">Ask them about</span>
+              Health benefits, pension enrollment, leave policies, onboarding paperwork, and workplace wellness programs.
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="contact-card">
+            <div class="contact-top">
+              <div class="contact-avatar" aria-hidden="true">DO</div>
+              <div class="contact-identity">
+                <div class="contact-name">David Okafor</div>
+                <div class="contact-role">Engineering Manager</div>
+              </div>
+            </div>
+            <div class="contact-body">
+              <span class="contact-label">Ask them about</span>
+              Your 30-60-90 day goals, team sprint planning, project ownership, career progression, and scheduling regular 1:1s.
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="contact-card">
+            <div class="contact-top">
+              <div class="contact-avatar" aria-hidden="true">PP</div>
+              <div class="contact-identity">
+                <div class="contact-name">Priya Patel</div>
+                <div class="contact-role">Office & Facilities Manager</div>
+              </div>
+            </div>
+            <div class="contact-body">
+              <span class="contact-label">Ask them about</span>
+              Desk allocations, ergonomic chairs, building access fobs, visitor parking passes, and mail deliveries.
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="contact-card">
+            <div class="contact-top">
+              <div class="contact-avatar" aria-hidden="true">LO</div>
+              <div class="contact-identity">
+                <div class="contact-name">Liam O'Connor</div>
+                <div class="contact-role">Finance & Expenses Specialist</div>
+              </div>
+            </div>
+            <div class="contact-body">
+              <span class="contact-label">Ask them about</span>
+              Corporate card requests, travel allowances, receipt submission rules, and reimbursement timing.
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Section 4: Useful Links -->
+      <section aria-labelledby="links-heading">
+        <div class="section-header">
+          <h2 id="links-heading" class="section-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d5b96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg>
+            Useful links
+          </h2>
+          <p class="section-subtitle">Quick access to essential company tools, forms, and internal portals.</p>
+        </div>
+
+        <div class="links-grid">
+          
+          <a href="#" class="useful-link-btn" data-name="HR portal">
+            <div class="link-icon-box" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div class="link-text-group">
+              <div class="link-name">HR portal</div>
+              <div class="link-hint">Profile, payslips & perks</div>
+            </div>
+            <svg class="link-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+
+          <a href="#" class="useful-link-btn" data-name="IT help">
+            <div class="link-icon-box" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div class="link-text-group">
+              <div class="link-name">IT help</div>
+              <div class="link-hint">Tickets & knowledgebase</div>
+            </div>
+            <svg class="link-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+
+          <a href="#" class="useful-link-btn" data-name="Leave form">
+            <div class="link-icon-box" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <div class="link-text-group">
+              <div class="link-name">Leave form</div>
+              <div class="link-hint">Request PTO & view holidays</div>
+            </div>
+            <svg class="link-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+
+          <a href="#" class="useful-link-btn" data-name="Expenses">
+            <div class="link-icon-box" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+            </div>
+            <div class="link-text-group">
+              <div class="link-name">Expenses</div>
+              <div class="link-hint">Submit claims & receipts</div>
+            </div>
+            <svg class="link-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+
+          <a href="#" class="useful-link-btn" data-name="Org chart">
+            <div class="link-icon-box" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="3" width="6" height="4" rx="1"></rect>
+                <rect x="2" y="17" width="6" height="4" rx="1"></rect>
+                <rect x="16" y="17" width="6" height="4" rx="1"></rect>
+                <path d="M12 7v5m0 0H5v5m7-5h7v5"></path>
+              </svg>
+            </div>
+            <div class="link-text-group">
+              <div class="link-name">Org chart</div>
+              <div class="link-hint">Company structure & teams</div>
+            </div>
+            <svg class="link-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+
+          <a href="#" class="useful-link-btn" data-name="Canteen menu">
+            <div class="link-icon-box" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="1" x2="6" y2="4"></line>
+                <line x1="10" y1="1" x2="10" y2="4"></line>
+                <line x1="14" y1="1" x2="14" y2="4"></line>
+              </svg>
+            </div>
+            <div class="link-text-group">
+              <div class="link-name">Canteen menu</div>
+              <div class="link-hint">Daily specials & dietary info</div>
+            </div>
+            <svg class="link-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- Section 5: FAQ -->
+      <section class="faq-card" aria-labelledby="faq-heading">
+        <div class="section-header">
+          <h2 id="faq-heading" class="section-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d5b96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            Frequently asked questions
+          </h2>
+          <p class="section-subtitle">Common queries from new team members answered in one place.</p>
+        </div>
+
+        <div class="faq-list">
+          
+          <!-- Question 1 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button" aria-expanded="false">
+              <span>What should I wear to the office?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-panel" role="region">
+              <p>We embrace a relaxed, smart-casual dress code. Jeans, shirts, sweaters, and clean sneakers are completely typical for everyday work. For client presentations or external partner visits, business casual is standard.</p>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button" aria-expanded="false">
+              <span>When is payday, and how are payslips accessed?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-panel" role="region">
+              <p>Salaries are deposited directly into your bank account on the 25th of each month (or the preceding working day if the 25th falls on a weekend or public holiday). You can view and download electronic payslips in the HR Portal under "My Compensation".</p>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button" aria-expanded="false">
+              <span>Can I work remotely or adjust my daily hours?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-panel" role="region">
+              <p>Yes. We operate on a flexible hybrid model. Most teams come into the office 2 to 3 days per week with core collaboration hours between 10:00 AM and 4:00 PM. Speak with your manager during your first 1:1 to agree on what works best for your team.</p>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button" aria-expanded="false">
+              <span>How do I book meeting rooms or private focus pods?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-panel" role="region">
+              <p>All conference rooms can be booked through Google Calendar or Outlook by adding the specific room resource as an event attendee. Individual acoustic phone booths on Levels 2 and 3 do not require reservations—if the light is green, feel free to use it.</p>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button" aria-expanded="false">
+              <span>Where can I find coffee, tea, and lunchtime amenities?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-panel" role="region">
+              <p>Each floor has a kitchen stocked with fair-trade bean-to-cup espresso machines, sparkling water taps, fresh fruit, and oat/dairy milk in refrigerators. The main cafeteria on Level 2 serves subsidized hot breakfasts (8:00–10:00 AM) and lunch (11:30 AM–2:00 PM).</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast" role="status" aria-live="polite">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="16" x2="12" y2="12"></line>
+        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+      </svg>
+      <span id="toast-message">Opening link...</span>
+    </div>
+
+    <script>
+      (function() {
+        const STORAGE_KEY = 'new_joiner_checklist_v1';
+        const checklistItems = document.querySelectorAll('.checklist-item');
+        const progressText = document.getElementById('progress-text');
+        const progressFill = document.getElementById('progress-fill');
+        const progressBarContainer = document.getElementById('progress-bar-container');
+        const completionAlert = document.getElementById('completion-alert');
+        const resetBtn = document.getElementById('reset-checklist-btn');
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toast-message');
+        let toastTimeout = null;
+
+        // Load saved checklist state
+        function getSavedTasks() {
+          try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            return raw ? JSON.parse(raw) : [];
+          } catch (e) {
+            console.error('Failed to read from localStorage:', e);
+            return [];
+          }
+        }
+
+        // Save checklist state
+        function saveTasks(tasks) {
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+          } catch (e) {
+            console.error('Failed to save to localStorage:', e);
+          }
+        }
+
+        // Update progress UI
+        function updateProgress() {
+          const total = checklistItems.length;
+          let completed = 0;
+
+          checklistItems.forEach(item => {
+            if (item.classList.contains('completed')) {
+              completed++;
+            }
+          });
+
+          const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+          progressText.textContent = `${completed} of ${total} completed (${percent}%)`;
+          progressFill.style.width = `${percent}%`;
+          progressBarContainer.setAttribute('aria-valuenow', completed);
+
+          if (completed === total && total > 0) {
+            completionAlert.classList.add('active');
+          } else {
+            completionAlert.classList.remove('active');
+          }
+        }
+
+        // Toggle task
+        function toggleTask(item) {
+          const taskId = item.getAttribute('data-id');
+          const isCompleted = item.classList.toggle('completed');
+          item.setAttribute('aria-checked', isCompleted ? 'true' : 'false');
+
+          let saved = getSavedTasks();
+          if (isCompleted) {
+            if (!saved.includes(taskId)) saved.push(taskId);
+          } else {
+            saved = saved.filter(id => id !== taskId);
+          }
+          saveTasks(saved);
+          updateProgress();
+        }
+
+        // Initialize checklist from storage
+        const savedTasks = getSavedTasks();
+        checklistItems.forEach(item => {
+          const taskId = item.getAttribute('data-id');
+          if (savedTasks.includes(taskId)) {
+            item.classList.add('completed');
+            item.setAttribute('aria-checked', 'true');
+          }
+
+          item.addEventListener('click', () => toggleTask(item));
+          item.addEventListener('keydown', (e) => {
+            if (e.key === ' ' || e.key === 'Enter') {
+              e.preventDefault();
+              toggleTask(item);
+            }
+          });
+        });
+
+        updateProgress();
+
+        // Reset checklist
+        resetBtn.addEventListener('click', () => {
+          if (confirm('Are you sure you want to reset all ticked checklist items?')) {
+            checklistItems.forEach(item => {
+              item.classList.remove('completed');
+              item.setAttribute('aria-checked', 'false');
+            });
+            saveTasks([]);
+            updateProgress();
+            showToast('Checklist has been reset');
+          }
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+          const btn = item.querySelector('.faq-question-btn');
+          const panel = item.querySelector('.faq-answer-panel');
+
+          btn.addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+
+            // Close other items for smooth accordion feel
+            faqItems.forEach(other => {
+              if (other !== item && other.classList.contains('open')) {
+                other.classList.remove('open');
+                other.querySelector('.faq-question-btn').setAttribute('aria-expanded', 'false');
+                other.querySelector('.faq-answer-panel').style.maxHeight = null;
+              }
+            });
+
+            if (isOpen) {
+              item.classList.remove('open');
+              btn.setAttribute('aria-expanded', 'false');
+              panel.style.maxHeight = null;
+            } else {
+              item.classList.add('open');
+              btn.setAttribute('aria-expanded', 'true');
+              panel.style.maxHeight = panel.scrollHeight + 'px';
+            }
+          });
+        });
+
+        // Useful links handler with toast feedback
+        function showToast(message) {
+          toastMessage.textContent = message;
+          toast.classList.add('visible');
+          if (toastTimeout) clearTimeout(toastTimeout);
+          toastTimeout = setTimeout(() => {
+            toast.classList.remove('visible');
+          }, 3000);
+        }
+
+        const usefulLinks = document.querySelectorAll('.useful-link-btn');
+        usefulLinks.forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const linkName = link.getAttribute('data-name');
+            showToast(`Opening ${linkName} (demo link)`);
+          });
+        });
+
+      })();
+    </script>
+  </body>
+</html>
+
